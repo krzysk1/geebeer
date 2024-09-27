@@ -1,0 +1,25 @@
+<[file][][]
+
+	// Gee Bee R1 Super Sportster
+	// 1932 version (first flight configuration) NR2100 number 11
+
+	// INTRODUCTION
+	// In its original version, the rudder of the R1 had no vertical fin.
+	// This induced the ship to fishtail badly. This has been fixed just
+	// after the first flight, with two square feet of fin added.
+
+	// CHARACTERISTICS
+	// Empty weight : 1840 lb
+	// Gross weight : 3075 lb with full tanks - 2415 lb for racing
+	// Powerplant : 800 horsepower Pratt & Whitney Wasp Sr. 1344
+	// Maximum speed : 300 mph
+	// Tail wheel : moving with rudder (can be unlatched for easier handling)
+	// Propeller : Smith controllable pitch
+	// Nav light : null
+
+    <[object][][]
+        <[string8][Description][Gee Bee R1 first flight]>
+        <[string8][Type][repaint]>
+		<[string8][Requirements][ gbr1_first power800 ]>
+    >
+>

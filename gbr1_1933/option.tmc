@@ -1,0 +1,24 @@
+<[file][][]
+
+	// Gee Bee R1 Super Sportster
+	// 1933 version NR2100 number 11
+
+	// INTRODUCTION
+	// In 1933 the R1 is re-engined with a more powerful engine. To counteract
+	// the increased torque, a 10 inch rudder extension is added at the lower end.
+	// Participating to the Bendix Trophy this year, the plane crashed on take-off
+	// in Indianapolis. Pilot Russell Boardman died two days later.
+
+	// CHARACTERISTICS
+	// Powerplant : around 1000 horsepower Pratt & Whitney R-1860
+	// Tail wheel : fixed
+	// Propeller : Smith controllable pitch
+	// Nav light : null
+
+    <[object][][]
+        <[string8][Description][Gee Bee R1 1933]>
+        <[string8][Type][repaint]>
+		<[string8][Requirements][ power1000 ]>
+        <[vec32array][ContactSpheres][ (1.253 0.9716 -1.19 0.276) (1.253 -0.9716 -1.19 0.276) (-2.264 0 -0.3258 0.057) ]>
+    >
+>

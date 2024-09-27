@@ -1,0 +1,95 @@
+<[file][][]
+
+	// Gee Bee R1 Super Sportster
+	// 1932 version (first flight configuration) NR2100 number 11
+
+	// INTRODUCTION
+	// In its original version, the rudder of the R1 had no vertical fin.
+	// This induced the ship to fishtail badly. This has been fixed just
+	// after the first flight, with two square feet of fin added.
+
+	// CHARACTERISTICS
+	// Empty weight : 1840 lb
+	// Gross weight : 3075 lb with full tanks - 2415 lb for racing
+	// Powerplant : 800 horsepower Pratt & Whitney Wasp Sr. 1344
+	// Maximum speed : 300 mph
+	// Tail wheel : moving with rudder (can be unlatched for easier handling)
+	// Propeller : Smith controllable pitch
+	// Nav light : null
+
+    <[modelmanager][][]
+        <[pointer_list_tmgraphics][DynamicObjects][]
+
+            // Tail wheel : moving with rudder
+            <[rigidbody][TailGear][]
+                <[float64][Mass][10.9]>
+                <[tmvector3d][InertiaLength][ 0.4 0.2 0.2 ]>
+                <[tmvector3d][R0][ -2.27 0 -0.165 ]>
+                <[tmmatrix3d][B0][ 1 0 0 0 1 0 0 0 1 ]>
+            >
+            <[multibody_joint][JointFuselageTailGear][]
+                <[string8][Body0][Fuselage]>
+                <[string8][Body1][TailGear]>
+                <[tmvector3d][X0][0.0 0.0 -1.0]>
+                <[tmvector3d][R0][ -2.18566 0 0.32795 ]>
+                <[string8][InputLock][1.0]>
+                <[string8][InputPosition][ServoRudder.Output]>
+                <[string8][InputLock][1.0]>
+                <[uint32][Type][0]>
+            >
+            <[wheel][TailWheelHull][]
+                <[float64][K][175000]>
+                <[float64][D][1500]>
+                <[float64][Radius][0.089]>
+                <[float64][Width][0.07627]>
+                <[float64][RimRadius][0.045]>
+                <[float64][Inflation][344738.0]>
+                <[string8][Body][TailGear]>
+                <[tmvector3d][R0][-2.43 0 -0.4008]>
+            >
+
+            <[collisionhull][CollisionFuselage][]
+                <[float64][K][2505000]>
+                <[float64][D][4175]>
+                <[string8][Body][Fuselage]>
+                <[string8][Geometry][FuselageFirst]>
+                <[float64][StaticFrictionCoefficient][1.0]>
+                <[float64][KineticFrictionCoefficient][0.4]>
+                <[bool][InstantCrash][true]>
+            >
+        >
+        <[pointer_list_tmgraphics][GraphicObjects][]
+
+            <[rigidbodygraphics][Fuselage][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+				<[string8][GeometryList][ FuselageFirst FuseDecalsGbr1 ]>
+            >
+            <[hingedbodygraphics][DoorDecal][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+				<[string8][GeometryList][ DoorDecalGbr1 ]>
+                <[uint32][Input][DoorMapping.Output]>
+                <[tmvector3d][Axis][0.000000 0.192857 0.981227]>
+                <[tmvector3d][Pivot][-0.720988 -0.575004 0.318745]>
+            >
+			// Tail wheel : moving with rudder
+            <[hingedbodygraphics][Rudder][]
+                <[string8][GeometryList][ RudderFirst RudderDecalFirst TailGearMoving ]>
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[uint32][InputID][ServoRudder.Output]>
+                <[tmvector3d][Axis][0.000000 0.000000 -1.000000]>
+                <[tmvector3d][Pivot][-2.215740 0.000000 0.727731]>
+            >
+            <[rotatingbodygraphics][TailWheel][]
+                <[string8][GeometryList][ TailWheelMooving ]>
+                <[uint32][PositionID][TailGear.R]>
+                <[uint32][OrientationID][TailGear.Q]>
+                <[uint32][AngleID][TailWheelHull.RotationAngle]>
+                <[tmvector3d][Axis][0.000000 1.000000 0.000000]>
+                <[tmvector3d][Pivot][-2.430185 0.014752 -0.400777]>
+            >
+        >
+    >
+>

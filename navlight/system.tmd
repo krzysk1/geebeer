@@ -1,0 +1,104 @@
+<[file][][]
+    <[modelmanager][][]
+        <[pointer_list_tmgraphics][DynamicObjects][]
+
+            // navigation lights
+            <[input_switch][NavigationLightSwitch][]
+                <[string8][Message][Controls.Lighting.Navigation]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output][NavigationLightOn][]
+                <[string8][Input][NavigationLightSwitch.Output]>
+            >
+
+        >
+        <[pointer_list_tmgraphics][GraphicObjects][]
+			// navigation light switch (on left)
+            <[hingedbodygraphics][GeeBeeR2_cockpit_114459_0][]
+                <[string8][GeometryList][ Switch ]>
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][InputID][NavigationLightOn.Output]>
+                <[tmvector3d][Axis][0.000000 1.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.793650 0.357484 0.687968]>
+                <[float64][Scaling][-1.570796]>
+                <[float64][Offset][0.785398]>
+            >
+            // Navigation lights : wing tip and tail fin
+            <[rigidbodygraphics][NavlightLeftTip][]
+                <[uint32][PositionID][LeftWing.R]>
+                <[uint32][OrientationID][LeftWing.Q]>
+                <[string8][GeometryList][ NavLeft ]>
+            >
+            <[rigidbodygraphics][NavlightRightTip][]
+                <[uint32][PositionID][RightWing.R]>
+                <[uint32][OrientationID][RightWing.Q]>
+                <[string8][GeometryList][ NavRight ]>
+            >
+            <[rigidbodygraphics][NavlightTail][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][GeometryList][ NavTail ]>
+            >
+            <[graphics_input][NavigationLightOn][]
+                <[uint32][InputID][NavigationLightOn.Output]>
+            >
+            <[graphics_pointlight][NavlightLeft1][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[tmvector3d][R0][0.921720 3.694390 0.141580]>
+                <[tmvector3d][X0][ 0.7 0.7 0.0 ]>
+                <[tmvector3d][Color][ 1.0 0.3 0.1 1.0 ]>
+                <[float64][Brightness][ 5.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
+            >
+            <[graphics_pointlight][NavlightLeft2][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[tmvector3d][R0][0.923310 3.694390 0.010470]>
+                <[tmvector3d][X0][ 0.7 0.7 0.0 ]>
+                <[tmvector3d][Color][ 1.0 0.3 0.1 1.0 ]>
+                <[float64][Brightness][ 5.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
+            >
+            <[graphics_pointlight][NavlightTailLeft][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[tmvector3d][R0][-2.010540 0.137712 0.918880]>
+                <[tmvector3d][X0][ 0.7 0.7 0.0 ]>
+                <[tmvector3d][Color][ 1.0 0.3 0.1 1.0 ]>
+                <[float64][Brightness][ 5.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
+            >
+            <[graphics_pointlight][NavlightRight1][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[tmvector3d][R0][0.921580 -3.695100 0.141970]>
+                <[tmvector3d][X0][ 0.7 -0.7 0.0 ]>
+                <[tmvector3d][Color][ 0.2 0.7 0.1 1.0 ]>
+                <[float64][Brightness][ 5.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
+            >
+            <[graphics_pointlight][NavlightRight2][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[tmvector3d][R0][0.922840 -3.695100 0.011010]>
+                <[tmvector3d][X0][ 0.7 -0.7 0.0 ]>
+                <[tmvector3d][Color][ 0.2 0.7 0.1 1.0 ]>
+                <[float64][Brightness][ 5.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
+            >
+            <[graphics_pointlight][NavlightTailRight][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[tmvector3d][R0][-2.010540 -0.144152 0.919700]>
+                <[tmvector3d][X0][ 0.7 -0.7 0.0 ]>
+                <[tmvector3d][Color][ 0.2 0.7 0.1 1.0 ]>
+                <[float64][Brightness][ 5.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
+            >
+        >
+    >
+>
