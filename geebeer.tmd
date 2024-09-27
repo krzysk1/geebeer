@@ -872,15 +872,15 @@
             <[output_free][ServoFlapPositionOutput][]
                 <[string8][Input][ServoFlapPosition.Output]>
             >
-            <[servolinear][ServoCheck][]
+            <[servolinear][ServoDoor][]
                 <[string8][Input][AirspeedIndicator.IndicatedAirspeed]>
                 <[float64][Position][0.0]>
                 <[float64][OutputSpeed][0.8]>
                 <[float64array][InputPosition][ 0 2 3]>
                 <[float64array][OutputPosition][ 1 1 0 ]>
             >
-            <[output_free][ServoCheckOutput][]
-                <[string8][Input][ServoCheck.Output]>
+            <[output_free][ServoDoorOutput][]
+                <[string8][Input][ServoDoor.Output]>
             >
             // flaps end
 
@@ -1179,7 +1179,7 @@
             >
 
             <[graphics_input][DoorInput][]
-                <[uint32][InputID][ServoCheck.Output]> //door-positions/crew/position-norm
+                <[uint32][InputID][ServoDoor.Output]>
             >
             <[graphics_linear_interpolation][DoorMapping][]
                 <[string8][Input][DoorInput.Output]>
@@ -1199,8 +1199,6 @@
             >
             <[hingedbodygraphics][DoorSupport1][]
                 <[string8][GeometryList][ DoorSupport2 ]>
-                <[uint32][PositionID][Fuselage.R]>
-                <[uint32][OrientationID][Fuselage.Q]>
                 <[string8][Input][DoorSupport1Mapping.Output]>
                 <[tmvector3d][Axis][-0.052145 -0.087154 -0.994829]>
                 <[tmvector3d][Pivot][-0.852621 -0.476146 0.493920]>
@@ -1212,8 +1210,6 @@
             >
             <[hingedbodygraphics][DoorSupport2][]
                 <[string8][GeometryList][ DoorSupport1 ]>
-                <[uint32][PositionID][Fuselage.R]>
-                <[uint32][OrientationID][Fuselage.Q]>
                 <[string8][Input][DoorSupport2Mapping.Output]>
                 <[tmvector3d][Axis][-0.052132 -0.087150 -0.994830]>
                 <[tmvector3d][Pivot][-0.927499 -0.450898 0.494258]>
@@ -1225,11 +1221,10 @@
                 <[uint32][InputID][ServoThrottle.Output]> //static_rotation
             >
 
-
             <[rigidbodygraphics][Cockpit][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][GeometryList][ CockpitRibs CockpitFrame GaugesAlternate GaugesGlass Lever1Box Warning GaugesBezels Cables Pushers ThrottlePanel Gauges ]>
+                <[string8][GeometryList][ CockpitRibs CockpitFrame  Lever1Box Warning Cables Pushers ThrottlePanel ]>
             >
 			// tail lock lever
             <[hingedbodygraphics][TailLockLever][]
@@ -1279,40 +1274,25 @@
                 <[float64][Scaling][-0.523599]>
                 <[float64][Offset][0.174533]>
             >
-
 			// stick
-            <[graphics_input][FC_ptch_Input][]
-                <[uint32][InputID][ServoElevatorPosition.Output]>
-                <[float64][Scaling][1.0000]>
-            >
-            <[graphics_input][FC_roll_Input][]
-                <[uint32][InputID][ServoAileronPosition.Output]>
-                <[float64][Scaling][1.0000]>
-            >
-            <[graphics_linear_interpolation][GeeBeeR2_cockpitMapping_115][]
-                <[string8][Input][FC_roll_Input.Output]> //sim/joystick/FC_roll
-                <[tmvector2d][Map][(-1.000000 0.069813) (1.000000 -0.069813)]>
-            >
-            <[graphics_rotation][GeeBeeR2_cockpitRotate_115][]
-                <[string8][Input][GeeBeeR2_cockpitMapping_115.Output]>
-                <[tmvector3d][Axis][-1.000000 0.000000 0.000000]>
-                <[tmvector3d][Pivot][-0.934287 0.000000 -0.112954]>
-            >
-            <[graphics_linear_interpolation][GeeBeeR2_cockpitMapping_119][]
-                <[string8][Input][FC_ptch_Input.Output]> //sim/joystick/FC_ptch
-                <[tmvector2d][Map][(-1.000000 0.034907) (1.000000 -0.034907)]>
-            >
-            <[graphics_rotation][GeeBeeR2_cockpitRotate_119][]
-                <[string8][Input][GeeBeeR2_cockpitMapping_119.Output]>
-                <[tmvector3d][Axis][0.018043 0.999837 0.000000]>
-                <[tmvector3d][Pivot][-0.934860 0.030406 -0.116705]>
-                <[string8][InputTransform][GeeBeeR2_cockpitRotate_115.Output]>
-            >
-            <[rigidbodygraphics][Stick][]
-                <[string8][GeometryList][ Stick ]>
+            <[hingedbodygraphics][StickBase][]
+                <[string8][GeometryList][ StickBase ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][InputTransform][GeeBeeR2_cockpitRotate_119.Output]>
+                <[uint32][InputID][ServoAileronPosition.Output]>
+                <[tmvector3d][Axis][-1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.934287 0.000000 -0.112954]>
+                <[float64][Scaling][-0.069813]>
+                <[float64][Offset][0.0]>
+            >			
+            <[hingedbodygraphics][Stick][]
+                <[string8][GeometryList][ Stick ]>
+                <[uint32][InputID][ServoElevatorPosition.Output]>
+                <[tmvector3d][Axis][0.018043 0.999837 0.000000]>
+                <[tmvector3d][Pivot][-0.934860 0.030406 -0.116705]>
+                <[string8][Graphics][StickBase]>
+                <[float64][Scaling][-0.034907]>
+                <[float64][Offset][0.0]>
             >
 			// battery switch (on green)
             <[hingedbodygraphics][MasterBatterySwitch][]
@@ -1341,7 +1321,7 @@
                 <[string8][GeometryList][ Lever6 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][InputID][AileronTrim.Output]> //sim/flightmodel/controls/ail_trim
+                <[string8][InputID][AileronTrim.Output]>
                 <[tmvector3d][Axis][-0.225109 0.974334 0.000072]>
                 <[tmvector3d][Pivot][-1.070410 0.339307 0.123080]>
                 <[float64][Scaling][-1.047198]>
@@ -1351,7 +1331,7 @@
                 <[string8][GeometryList][ TrimWheel ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][InputID][PitchTrim.Output]> //sim/flightmodel/controls/elv_trim
+                <[string8][InputID][PitchTrim.Output]>
                 <[tmvector3d][Axis][-0.258863 0.965914 0.000000]>
                 <[tmvector3d][Pivot][-1.161880 0.334284 0.196169]>
                 <[float64][Scaling][-1.047198]>
@@ -1392,7 +1372,7 @@
                 <[string8][GeometryList][ Lever4 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][InputID][ServoThrottle.Output]> //sim/flightmodel/controls/parkbrake
+                <[string8][InputID][ParkingBrake.Output]>
                 <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
                 <[float64][Scaling][0.016315]>
             >
@@ -1408,39 +1388,43 @@
             >
 
         // Instruments
-        // --------------------------------
-
-            <[graphics_input][OiltempNeedle_5Input][]
+        // --------------------------------		
+            <[rigidbodygraphics][Instruments][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][GeometryList][ GaugesAlternate GaugesGlassAlternate Gauges GaugesBezels ]>
+            > //GaugesGlass 
+            <[graphics_input][OilTempNeedleInput][]
                 <[uint32][InputID][ServoEngineWork.Output]> //engines/engine/oil-temperature-degf
                 <[float64][Scaling][200]>
             >
-            <[graphics_linear_interpolation][OiltempNeedle_5Mapping][]
-                <[string8][Input][OiltempNeedle_5Input.Output]>
+            <[graphics_linear_interpolation][OilTempNeedleMapping][]
+                <[string8][Input][OilTempNeedleInput.Output]>
                 <[tmvector2d][Map][ (0 0) (104 1.919862) (140 2.827433) (176 3.752458) (212 4.677482) (266 5.235988) ]>
             >
-            <[hingedbodygraphics][OiltempNeedle][]
-                <[string8][GeometryList][  ]>
+            <[hingedbodygraphics][OilTempNeedle][]
+                <[string8][GeometryList][ OilTempNeedle ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][Input][OiltempNeedle_5Mapping.Output]>
-                <[tmvector3d][Axis][ -0.965926 0.0 0.258819 ]>
-                <[tmvector3d][Pivot][-0.875864 0.048 0.747862]>
+                <[uint32][Input][OilTempNeedleMapping.Output]>
+                <[tmvector3d][Axis][-1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7955 0.1330 0.6116]>
             >
-            <[graphics_input][OilpressureNeedle_5Input][]
+            <[graphics_input][OilPressureNeedleInput][]
                 <[uint32][InputID][ServoEngineWork1.Output]> //engines/engine[0]/oil-pressure-psi
                 <[float64][Scaling][123.456]>
             >
-            <[graphics_linear_interpolation][OilpressureNeedle_5Mapping][]
-                <[string8][Input][OilpressureNeedle_5Input.Output]>
+            <[graphics_linear_interpolation][OilPressureNeedleMapping][]
+                <[string8][Input][OilPressureNeedleInput.Output]>
                 <[tmvector2d][Map][ (0 0) (20 0.785398) (40 1.570796) (60 2.391101) (80 3.193953) (100 3.961897) (120 4.729842) ]>
             >
-            <[hingedbodygraphics][OilpressureNeedle][]
-                <[string8][GeometryList][  ]>
+            <[hingedbodygraphics][OilPressureNeedle][]
+                <[string8][GeometryList][ OilPsiNeedle ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][Input][OilpressureNeedle_5Mapping.Output]>
-                <[tmvector3d][Axis][ -0.965926 0.0 0.258819 ]>
-                <[tmvector3d][Pivot][-0.875864 0.095 0.747862]>
+                <[uint32][Input][OilPressureNeedleMapping.Output]>
+                <[tmvector3d][Axis][-1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7953 0.2590 0.6087]>
             >
             <[graphics_input][FuelNeedle_5Input][]
                 <[uint32][InputID][ServoEngineWork.Output]> //consumables/fuel/tank[0]/level-gal_us
@@ -1455,7 +1439,7 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][Input][FuelNeedle_5Mapping.Output]>
-                <[tmvector3d][Axis][ -0.965926 0.0 0.258819 ]>
+                <[tmvector3d][Axis][-1.000000 0.000000 0.000000]>
                 <[tmvector3d][Pivot][-0.859041 -0.122 0.810647]>
             >
             <[hingedbodygraphics][Compass][]
@@ -1463,7 +1447,7 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][InputID][HeadingAngle.Output]>
-                <[tmvector3d][Axis][ -0.258819 0.0 -0.965926 ]>
+                <[tmvector3d][Axis][0.000000 0.000000 -1.000000]>
                 <[tmvector3d][Pivot][-0.837254 0 0.822409]>
             >
             <[graphics_input][TurnBallInput][]
@@ -1475,21 +1459,21 @@
                 <[tmvector2d][Map][ (-1.1 -0.10821) (1.1 0.10821) ]>
             >
             <[hingedbodygraphics][TurnBall][]
-                <[string8][GeometryList][  ]>
+                <[string8][GeometryList][ BallNeedle ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][Input][TurnBallMapping.Output]>
-                <[tmvector3d][Axis][ 0.965926 0.0 -0.258819 ]>
-                <[tmvector3d][Pivot][-0.811229 0 0.985221]>
+                <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7968 -0.005903 0.7757]>
             >
             <[hingedbodygraphics][TurnNeedle][]
-                <[string8][GeometryList][  ]>
+                <[string8][GeometryList][ TurnNeedle ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][InputID][RateOfTurn.Output]>
                 <[float64][Scaling][-1.117011]> // 8
-                <[tmvector3d][Axis][ 0.965926 0.0 -0.258819 ]>
-                <[tmvector3d][Pivot][-0.868169 0 0.772717]>
+                <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7958 -0.005373 0.8008]>
             >
             <[graphics_input][AsiNeedle_5Input][]
                 <[uint32][InputID][AirspeedIndicatorNeedle.Output]>
@@ -1509,39 +1493,39 @@
                      (360 4.764749) ]>
             >
             <[hingedbodygraphics][AsiNeedle][]
-                <[string8][GeometryList][  ]>
+                <[string8][GeometryList][ AsiNeedle ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][Input][AsiNeedle_5Mapping.Output]>
-                <[tmvector3d][Axis][ 0.965926 0.0 -0.258819 ]>
-                <[tmvector3d][Pivot][-0.860853 -0.062 0.803885]>
+                <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7958 -0.1626 0.7760]>
             >
             <[hingedbodygraphics][AltNeedle100][]
-                <[string8][GeometryList][  ]>
+                <[string8][GeometryList][ AltNeedle100 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][InputID][AltimeterNeedle.Output]>
                 <[float64][Scaling][0.020601]> //0.36
-                <[tmvector3d][Axis][ 0.965926 0.0 -0.258819 ]>
-                <[tmvector3d][Pivot][-0.875347 -0.062 0.749793]>
+                <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7962 0.1432 0.7763]>
             >
             <[hingedbodygraphics][AltNeedle1000][]
-                <[string8][GeometryList][  ]>
+                <[string8][GeometryList][ AltNeedle1k ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][InputID][AltimeterNeedle.Output]>
                 <[float64][Scaling][0.00206]> //0.036
-                <[tmvector3d][Axis][ 0.965926 0.0 -0.258819 ]>
-                <[tmvector3d][Pivot][-0.875347 -0.062 0.749793]>
+                <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7962 0.1432 0.7763]>
             >
             <[hingedbodygraphics][AltNeedle10000][]
-                <[string8][GeometryList][  ]>
+                <[string8][GeometryList][ AltNeedle10k ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][InputID][AltimeterNeedle.Output]>
                 <[float64][Scaling][0.000206]> //0.0036
-                <[tmvector3d][Axis][ 0.965926 0.0 -0.258819 ]>
-                <[tmvector3d][Pivot][-0.875347 -0.062 0.749793]>
+                <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7962 0.1432 0.7763]>
             >
             <[graphics_input][VsiNeedle_5Input][]
                 <[uint32][InputID][VerticalSpeedIndicatorNeedle.Output]>
@@ -1560,12 +1544,12 @@
                      (2000 3.001966) ]>
             >
             <[hingedbodygraphics][VsiNeedle][]
-                <[string8][GeometryList][   ]>
+                <[string8][GeometryList][ VsiNeedle ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][Input][VsiNeedle_5Mapping.Output]>
-                <[tmvector3d][Axis][ 0.965926 0.0 -0.258819 ]>
-                <[tmvector3d][Pivot][-0.875347 -0.122 0.749793]>
+                <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7945 -0.3684 0.6143]>
             >
             <[graphics_input][RpmNeedle_5Input][]
                 <[uint32][InputID][RotationSpeed.Output]>
@@ -1583,12 +1567,12 @@
                       (3500 4.468043) ]>
             >
             <[hingedbodygraphics][RpmNeedle][]
-                <[string8][GeometryList][   ]>
+                <[string8][GeometryList][ RpmNeedle ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][Input][RpmNeedle_5Mapping.Output]>
-                <[tmvector3d][Axis][ 0.965926 0.0 -0.258819 ]>
-                <[tmvector3d][Pivot][-0.875347 0.148 0.749793]>
+                <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
+                <[tmvector3d][Pivot][-0.7947 -0.2763 0.7031]>
             >
 
             // human animation
