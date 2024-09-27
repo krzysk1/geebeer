@@ -6,20 +6,17 @@ The Gee Bee R1 and R2 Super Sportster were designed specifically for the 1932 Th
 For those interested in learning more about the history of these particular
 aircrafts and their builders, I recommend the following books and sites:
 
-- 'THE GEE BEE RACERS' A Legacy of Speed
-   by Charles A. Mendenhall & Tom Murphy - Specialty Press
+- 'THE GEE BEE RACERS' A Legacy of Speed by Charles A. Mendenhall & Tom Murphy - Specialty Press
    The story of the Granville Brothers and their machines
 
-- GEE BEE
-   by Delmar Benjamin and Steve Wolf - Motorbooks International
+- GEE BEE by Delmar Benjamin and Steve Wolf - Motorbooks International
    The story of the creation of the R2 replica.
 
 - http://www.webcitation.org/query?url=http://www.geocities.com/CapeCanaveral/lab/4515/index3.html&
 
 
 This is free add-on for AeroflyFS4 developed by Krzysztof Kaniewski, Sep 2024
-3D model: xxx
-Thanks to them.
+3D model: Active - Thanks to him/her.
 
  Some features may not work as intended and this aircraft could crash your Aerofly FS4. 
  Use it at your own risk!
