@@ -1,43 +1,13 @@
 <[file][][]
     <[hints][][]
         // Gee-Bee R
-        <[float64][MaximumTakeOffMass][834.6]>
-        <[float64][WingSpan][7.51]>
-        <[float64][WingArea][18.5]>
-        <[float64][HeightOffset][-0.8249]>
-        <[float64][NoseWheelPositionX][2.285]>
+        <[float64][MaximumTakeOffMass][1394.8]>
+        <[float64][WingSpan][7.62]>
+        <[float64][WingArea][6.97]>
+        <[float64][HeightOffset][-1.19]>
         <[float64][ApproachSpeed][46.3]>
         <[float64][PatternSpeed][61.7]>
         <[float64][InitialClimbSpeed][51.4]>
-        <[copilot_flap_info_list][FlapInfo][]
-           <[copilot_flap_info][FlapUp][]
-              <[float64][FlapPosition][0.0]>
-              <[float64][MinimumSpeed][43.7]>
-              <[float64][OptimumSpeed][61.73]>
-              <[float64][MaximumSpeed][115.7]>
-              <[bool][TakeOff][true]>
-              <[bool][Landing][true]>
-              <[bool][AirBrake][true]>
-           >
-           <[copilot_flap_info][FlapApproach][]
-              <[float64][FlapPosition][0.5]>
-              <[float64][MinimumSpeed][40.0]>
-              <[float64][OptimumSpeed][51.4]>
-              <[float64][MaximumSpeed][62.7]>
-              <[bool][TakeOff][true]>
-              <[bool][Landing][true]>
-              <[bool][AirBrake][true]>
-           >
-           <[copilot_flap_info][FlapFull][]
-              <[float64][FlapPosition][1.0]>
-              <[float64][MinimumSpeed][38.5]>
-              <[float64][OptimumSpeed][46.29]>
-              <[float64][MaximumSpeed][62.7]>
-              <[bool][Landing][true]>
-              <[bool][AirBrake][true]>
-           >
-        >
-        <[string8][AutoPilotType][]>
         <[int][EngineCount][1]>
         <[bool][Piston][true]>
         <[bool][Aerobatic][true]>

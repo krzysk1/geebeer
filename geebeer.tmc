@@ -3,7 +3,7 @@
         <[string8][ICAO][]>        <[string8][DisplayName][Gee Bee Model R]>
         <[string8][DisplayNameFull][Gee Bee Model R Super Sportster]>
         <[localized_text_list][Descriptions][]            <[localized_text][][]                <[string8][Language][en]>                <[string8][Text][The Gee Bee Model R Super Sportster was a special purpose racing aircraft made by Granville Brothers Aircraft of Springfield, Massachusetts. Gee Bee stands for Granville Brothers. Converted from X-Plane by Krzysztof Kaniewski. Original 3D model made by Active.]>			>            <[localized_text][][]                <[string8][Language][de]>                <[string8][Text][Das Gee Bee Model R Super Sportster war ein Rennflugzeug für spezielle Zwecke, hergestellt von der Granville Brothers Aircraft aus Springfield, Massachusetts. Gee Bee steht für Granville Brothers. Konvertiert von X-Plane durch Krzysztof Kaniewski. Ursprüngliches 3D-Modell von Active.]>			>
-        >        <[float64][MaximumTakeoffMass][1095.0]>        <[float64][WingSpan]          [7.62]>
+        >        <[float64][MaximumTakeoffMass][1394.8]>        <[float64][WingSpan]          [7.62]>
         <[float64][MinimumAirspeed]   [39]>
         <[float64][ApproachAirspeed]  [39]>
         <[float64][CruiseAirspeed]    [115]>
