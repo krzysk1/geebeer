@@ -1284,7 +1284,7 @@
                 <[tmvector3d][Pivot][-0.934287 0.000000 -0.112954]>
                 <[float64][Scaling][-0.069813]>
                 <[float64][Offset][0.0]>
-            >			
+            >
             <[hingedbodygraphics][Stick][]
                 <[string8][GeometryList][ Stick ]>
                 <[uint32][InputID][ServoElevatorPosition.Output]>
@@ -1388,12 +1388,12 @@
             >
 
         // Instruments
-        // --------------------------------		
+        // --------------------------------
             <[rigidbodygraphics][Instruments][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[string8][GeometryList][ GaugesAlternate GaugesGlassAlternate Gauges GaugesBezels ]>
-            > //GaugesGlass 
+            > //GaugesGlass
             <[graphics_input][OilTempNeedleInput][]
                 <[uint32][InputID][ServoEngineWork.Output]> //engines/engine/oil-temperature-degf
                 <[float64][Scaling][200]>
@@ -1449,7 +1449,7 @@
                 <[uint32][Input][FuelNeedleMapping.Output]>
                 <[tmvector3d][Axis][1.000000 0.000000 0.000000]>
                 <[tmvector3d][Pivot][-0.7940 0.3321 0.6181]>
-            >			
+            >
             <[hingedbodygraphics][Compass][]
                 <[string8][GeometryList][  ]>
                 <[uint32][PositionID][Fuselage.R]>
@@ -3649,31 +3649,6 @@
                 <[bool][External][false]>
             >
 
-            // stall warning
-            <[soundinput][AngleOfAttack][]
-                <[uint32][InputID][AngleOfAttack.Output]>
-            >
-            <[soundmapping][AngleOfAttackMap][]
-                <[string8][Input][AngleOfAttack.Output]>
-                <[tmvector2d][Map][ (-10.0 0.0) (0.270 0.0) (0.279 1.0) (10.0 1.0) ]>
-            >
-            <[soundmapping][AngleOfAttackVolumeMap][]
-                <[string8][Input][Airspeed.Output]>
-                <[tmvector2d][Map][ (0.0 0.0) (5.0 0.0) (20.0 0.5) (200.0 1.0) ]>
-            >
-            <[soundmultiply][AngleOfAttackVolume][]
-                <[string8][Input0][AngleOfAttackMap.Output]>
-                <[string8][Input1][AngleOfAttackVolumeMap.Output]>
-            >
-            <[soundloop][StallWarningLoop][]
-                <[string8][InputVolume][AngleOfAttackVolume.Output]>
-                <[string8][InputPitch][1.0]>
-                <[uint32][PositionID][Fuselage.R]>
-                <[uint32][VelocityID][Fuselage.V]>
-                <[string8][SoundFile][stall.wav]>
-                <[bool][External][false]>
-            >
-
             // prop wash
             <[soundmapping][RpmPitchWind][]
                 <[string8][Input][RotationSpeed.Output]>
@@ -3951,4 +3926,3 @@
         >
     >
 >
-
