@@ -18,7 +18,6 @@
     <[object][][]
         <[string8][Description][Gee Bee R1 1933]>
         <[string8][Type][repaint]>
-		<[string8][Requirements][ power1000 ]>
         <[vec32array][ContactSpheres][ (1.253 0.9716 -1.19 0.276) (1.253 -0.9716 -1.19 0.276) (-2.264 0 -0.3258 0.057) ]>
     >
->
+> //power1000

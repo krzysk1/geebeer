@@ -21,7 +21,7 @@
     <[object][][]
         <[string8][Description][Gee Bee R2 1932]>
         <[string8][Type][repaint]>
-		<[string8][Requirements][ power550 navlight ]>
+		<[string8][Requirements][ navlight ]>
         <[vec32array][ContactSpheres][ (1.253 0.9716 -1.19 0.276) (1.253 -0.9716 -1.19 0.276) (-2.096 0 -0.4868 0.089) ]>
     >
->
+> //power550

@@ -1,0 +1,38 @@
+<[file][][]
+
+	// Gee Bee R1 Super Sportster
+	// 1932 version NR2100 number 11
+
+	// INTRODUCTION
+	// In september the 7th, the R1, flown by pilot James H. Doolittle,
+	// won the Thompson Trophy pylon race, at an average speed
+	// of 252,7 mph.
+
+	// CHARACTERISTICS
+	// Empty weight : 1840 lb
+	// Gross weight : 3075 lb with full tanks - 2415 lb for racing
+	// Powerplant : 800 horsepower Pratt & Whitney Wasp Sr. 1344
+	// Maximum speed : 300 mph
+	// Tail wheel : moving with rudder (can be unlatched for easier handling)
+	// Propeller : Smith controllable pitch
+	// Nav light : null
+
+    <[modelmanager][][]
+        <[pointer_list_tmgraphics][DynamicObjects][]
+
+            <[collisionhull][CollisionFuselage][]
+                <[string8][Geometry][Fuselage]>
+            >
+        >
+        <[pointer_list_tmgraphics][GraphicObjects][]
+
+            <[rigidbodygraphics][Fuselage][]
+				<[string8][GeometryList][ Fuselage FuseDecalsGbr1 FinDecalsGbr1 ]>
+            >
+			// Tail wheel : moving with rudder
+            <[hingedbodygraphics][Rudder][]
+                <[string8][GeometryList][ Rudder RudderDecalGbr1 TailGearMoving ]>
+            >
+        >
+    >
+>

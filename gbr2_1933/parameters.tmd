@@ -1,0 +1,65 @@
+<[file][][]
+
+	// Gee Bee R2 Super Sportster            (NOT INCLUDED IN THIS PACKAGE)
+	// 1933 version NR2101 number 7
+
+	// INTRODUCTION
+	// In 1933 the R2 is re-engined with the R1's previous engine. Rudder extension
+	// is added in the same way that for the R1. New wings are thicker and have an
+	// increased area. Flaps are added too, lowering the landing speed at 65 mph.
+
+	// CHARACTERISTICS
+	// Powerplant : 550  or 800 horsepower Pratt & Whitney Wasp Sr. 1344
+	// Tail wheel : fixed
+	// Propeller : Smith controllable pitch
+	// Nav light : wing tip and tail fin
+
+    <[modelmanager][][]
+        <[pointer_list_tmgraphics][DynamicObjects][]
+
+            <[collisionhull][CollisionFuselage][]
+                <[string8][Geometry][Fuselage]>
+            >
+			// Tail wheel : fixed
+            <[wheel][TailWheelHull][]
+                <[float64][Radius][0.057]>
+                <[tmvector3d][R0][-2.264 0 -0.3258]>
+            >
+        >
+        <[pointer_list_tmgraphics][GraphicObjects][]
+
+            <[rigidbodygraphics][Fuselage][]
+				<[string8][GeometryList][ Fuselage FuseDecalsGbr2 ]>
+            >
+            <[hingedbodygraphics][DoorDecal][]
+				<[string8][GeometryList][ DoorDecalGbr2 ]>
+            >
+            <[hingedbodygraphics][Rudder][]
+                <[string8][GeometryList][ Rudder1933 RudderDecalGbr2 ]>
+            >
+			// Tail wheel : fixed
+            <[rotatingbodygraphics][TailWheel][]
+                <[string8][GeometryList][ TailWheel1933 ]>
+                <[tmvector3d][Pivot][-2.264349 0.014752 -0.325791]>
+            >
+        >
+    >
+>
+
+			// Flaps are added too, lowering the landing speed at 65 mph.
+            <[hingedbodygraphics][RightFlap][]
+                <[string8][GeometryList][  ]>
+                <[uint32][PositionID][RightWing.R]>
+                <[uint32][OrientationID][RightWing.Q]>
+                <[uint32][InputID][ServoFlaps.Output]>
+                <[tmvector3d][Axis][ 0.0 -1.0 0.0 ]>
+                <[tmvector3d][Pivot][0.314 -1.332 -0.112]>
+            >
+            <[hingedbodygraphics][LeftFlap][]
+                <[string8][GeometryList][  ]>
+                <[uint32][PositionID][LeftWing.R]>
+                <[uint32][OrientationID][LeftWing.Q]>
+                <[uint32][InputID][ServoFlaps.Output]>
+                <[tmvector3d][Axis][ 0.0 -1.0 0.0 ]>
+                <[tmvector3d][Pivot][0.314 1.332 -0.112]>
+            >
