@@ -27,9 +27,13 @@
             >
             <[camera_head][CameraPilot][]
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][R0][-1.240 0.0 0.95]>
+                <[tmvector3d][R0][-1.26 0.0 0.94]>
                 <[tmvector3d][X0][0.9962 0.0 -0.0872]>
                 <[string8][Tags][cockpit pilot]>
+                <[float64][Kf][40.0]>
+                <[float64][Df][1.0]>
+                <[float64][Kt][0.04]>
+                <[float64][Dt][0.02]>
                 <[bool][InCockpit][true]>
             >
             <[camera][CameraNose][]
@@ -37,6 +41,7 @@
                 <[tmvector3d][R0][ 7.332 2.666 2.666 ]>
                 <[tmvector3d][Direction][ -0.889 -0.323 -0.323 ]>
                 <[string8][Tags][nose]>
+                <[bool][InCockpit][false]>
             >
 
             // cameras end
@@ -1170,7 +1175,7 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
 				<[string8][GeometryList][ Exchaust Engine Nacelle NacelleDecal ]>
-            >			
+            >
 
 			// Tail wheel : moving with rudder
             <[hingedbodygraphics][Rudder][]
