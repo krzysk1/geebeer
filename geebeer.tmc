@@ -1,12 +1,76 @@
-<[file][][]    <[modelinformation][][]        <[int32][Version][220]>        <[list_vector4_float64][ContactSpheres][ (1.253 0.9716 -1.19 0.276) (1.253 -0.9716 -1.19 0.276) (-2.43 0 -0.4008 0.089) ]>	
-        <[stringt8c][ICAO][]>        <[string8][DisplayName][Gee Bee Model R]>
+<[file][][]
+    <[modelinformation][][]
+        <[int32][Version][220]>
+        <[list_vector4_float64][ContactSpheres][ (1.253 0.9716 -1.19 0.276) (1.253 -0.9716 -1.19 0.276) (-2.43 0 -0.4008 0.089) ]>
+        <[stringt8c][ICAO][]>
+        <[string8][DisplayName][Gee Bee Model R]>
         <[string8][DisplayNameFull][Gee Bee Model R Super Sportster]>
-        <[list_localized_text][Descriptions][]            <[localized_text][element][0]                <[string8u][Language][en]>                <[string8][Text][The Gee Bee Model R Super Sportster was a special purpose racing aircraft made by Granville Brothers Aircraft of Springfield, Massachusetts. Gee Bee stands for Granville Brothers. Converted from X-Plane by Krzysztof Kaniewski. Original 3D model made by Active.]>			>            <[localized_text][element][1]                <[string8u][Language][de]>                <[string8][Text][Das Gee Bee Model R Super Sportster war ein Rennflugzeug für spezielle Zwecke, hergestellt von der Granville Brothers Aircraft aus Springfield, Massachusetts. Gee Bee steht für Granville Brothers. Konvertiert von X-Plane durch Krzysztof Kaniewski. Ursprüngliches 3D-Modell von Active.]>			>
-            <[localized_text][element][2]                <[string8u][Language][pl]>                <[string8][Text][Gee Bee Model R Super Sportster był specjalnym samolotem wyścigowym wyprodukowanym przez Granville Brothers Aircraft ze Springfield w stanie Massachusetts. Gee Bee to skrót od Granville Brothers. Przerobiony z X-Plane przez Krzysztofa Kaniewskiego. Oryginalny model 3D wykonany przez Active.]>			>        >        <[float64][MaximumTakeoffMass][1394.8]>        <[float64][WingSpan]          [7.62]>
+        <[list_localized_text][Descriptions][]
+            <[localized_text][element][0]
+                <[string8u][Language][en]>
+                <[string8][Text][The Gee Bee Model R Super Sportster was a special purpose racing aircraft made by Granville Brothers Aircraft of Springfield, Massachusetts. Gee Bee stands for Granville Brothers. Converted from X-Plane by Krzysztof Kaniewski. Original 3D model made by Active.]>
+			>
+            <[localized_text][element][1]
+                <[string8u][Language][de]>
+                <[string8][Text][Das Gee Bee Model R Super Sportster war ein Rennflugzeug für spezielle Zwecke, hergestellt von der Granville Brothers Aircraft aus Springfield, Massachusetts. Gee Bee steht für Granville Brothers. Konvertiert von X-Plane durch Krzysztof Kaniewski. Ursprüngliches 3D-Modell von Active.]>
+			>
+            <[localized_text][element][2]
+                <[string8u][Language][pl]>
+                <[string8][Text][Gee Bee Model R Super Sportster był specjalnym samolotem wyścigowym wyprodukowanym przez Granville Brothers Aircraft ze Springfield w stanie Massachusetts. Gee Bee to skrót od Granville Brothers. Przerobiony z X-Plane przez Krzysztofa Kaniewskiego. Oryginalny model 3D wykonany przez Active.]>
+			>
+        >
+        <[float64][MaximumTakeoffMass][1394.8]>
+        <[float64][WingSpan]          [7.62]>
         <[float64][MinimumAirspeed]   [39]>
-        <[float64][ApproachAirspeed]  [39]>        <[float64][MinimumAirspeed]   [39]>        <[float64][ApproachAirspeed]  [39]>        <[float64][CruiseAirspeed]    [115]>        <[float64][CruiseAltitude]    [1000]>        <[float64][CruiseSpeed]       [120.9]>        <[float64][MaximumAirspeed]   [127.9]>        <[float64][MaximumAltitude]   [1500]>        <[float64][MaximumSpeed]      [127.9]>
+        <[float64][ApproachAirspeed]  [39]>
+        <[float64][MinimumAirspeed]   [39]>
+        <[float64][ApproachAirspeed]  [39]>
+        <[float64][CruiseAirspeed]    [115]>
+        <[float64][CruiseAltitude]    [1000]>
+        <[float64][CruiseSpeed]       [120.9]>
+        <[float64][MaximumAirspeed]   [127.9]>
+        <[float64][MaximumAltitude]   [1500]>
+        <[float64][MaximumSpeed]      [127.9]>
         <[float64][EnginePower]       [544360.3]>
         <[float64][MaximumRange]      [1488000.0]>
         <[uint32] [UnitsBuilt]        [2]>
-        <[uint32] [EngineCount]       [1]>        <[uint32] [Year]              [1932]>        <[vector2_float64][FlapAirspeedRange]   [ 0  0 ]>        <[vector2_float64][NormalAirspeedRange] [ 39 85 ]>        <[vector2_float64][CautionAirspeedRange][ 85 127.9 ]>
-        <[string8][Tags][ airplane  historical piston gear tailgear ]>        <[string8][Pilot][pilot_peter]>    >>// http://www.airracinghistory.freeola.com/aircraft/GeeBee%20R1.htm// http://www.airminded.net/geebee/gbr.html// Specifications (Gee Bee Super Sportster R-1)// Gee Bee Super Sportster 3-view drawing from L'Aerophile Salon 1932// Data from The Influence of Racing Types on Commercial Aircraft Design.[16]// General characteristics// Crew: 1// Length: 17 ft 8 in (5.38 m)// Wingspan: 25 ft 0 in (7.62 m)// Height: 8 ft 2 in (2.48 m)// Wing area: 75 sq ft (6.97 m2)// Airfoil: NACA M6 (modified)// Empty weight: 1,840 lb (834 kg)// Gross weight: 2,415 lb (1,095 kg)// Max takeoff weight: 3,075 lb (1,394.8 kg)// Fuel capacity: 160 US gal (610 L)// Aspect ratio: 6.1// Incidence: 2.5 Degrees// Powerplant: 1 × Pratt & Whitney R-1340 Wasp 1,344 cubic inch (22 L) displacement air-cooled 9 cylinder radial, 800 hp (596.5 kW)// Performance// Maximum speed: 294.38 mph (473.8 km/h, 255.81 kn)// Cruise speed: 260 mph (418.4 km/h, 230 kn)// Stall speed: 90 mph (144 km/h, 78 kn)// Range: 925 mi (1,488 km, 804 nmi) 630 miles, full throttle// full throttle: 2.14 hours// cruising: 3.65 hours
+        <[uint32] [EngineCount]       [1]>
+        <[uint32] [Year]              [1932]>
+        <[vector2_float64][NormalAirspeedRange] [ 39.0 85.0 ]>
+        <[vector2_float64][CautionAirspeedRange][ 85  127.9 ]>
+        <[string8][Tags][ airplane  historical piston gear tailgear ]>
+        <[string8][Pilot][pilot_peter]>
+    >
+>
+
+// http://www.airracinghistory.freeola.com/aircraft/GeeBee%20R1.htm
+// http://www.airminded.net/geebee/gbr.html
+
+// Specifications (Gee Bee Super Sportster R-1)
+
+// Gee Bee Super Sportster 3-view drawing from L'Aerophile Salon 1932
+// Data from The Influence of Racing Types on Commercial Aircraft Design.[16]
+
+// General characteristics
+
+// Crew: 1
+// Length: 17 ft 8 in (5.38 m)
+// Wingspan: 25 ft 0 in (7.62 m)
+// Height: 8 ft 2 in (2.48 m)
+// Wing area: 75 sq ft (6.97 m2)
+// Airfoil: NACA M6 (modified)
+// Empty weight: 1,840 lb (834 kg)
+// Gross weight: 2,415 lb (1,095 kg)
+// Max takeoff weight: 3,075 lb (1,394.8 kg)
+// Fuel capacity: 160 US gal (610 L)
+// Aspect ratio: 6.1
+// Incidence: 2.5 Degrees
+// Powerplant: 1 × Pratt & Whitney R-1340 Wasp 1,344 cubic inch (22 L) displacement air-cooled 9 cylinder radial, 800 hp (596.5 kW)
+// Performance
+
+// Maximum speed: 294.38 mph (473.8 km/h, 255.81 kn)
+// Cruise speed: 260 mph (418.4 km/h, 230 kn)
+// Stall speed: 90 mph (144 km/h, 78 kn)
+// Range: 925 mi (1,488 km, 804 nmi) 630 miles, full throttle
+// full throttle: 2.14 hours
+// cruising: 3.65 hours
