@@ -15,6 +15,18 @@
                 <[string8][Text][Das Gee Bee Model R Super Sportster war ein Rennflugzeug für spezielle Zwecke, hergestellt von der Granville Brothers Aircraft aus Springfield, Massachusetts. Gee Bee steht für Granville Brothers. Konvertiert von X-Plane durch Krzysztof Kaniewski. Ursprüngliches 3D-Modell von Active.]>
 			>
             <[localized_text][element][2]
+                <[string8u][Language][fr]>
+                <[string8][Text][Le Gee Bee Model R Super Sportster était un avion de course spécial fabriqué par Granville Brothers Aircraft à Springfield, dans le Massachusetts. Gee Bee signifie Granville Brothers. Converti à partir de X-Plane par Krzysztof Kaniewski. Modèle 3D original créé par Active.]>
+			>
+            <[localized_text][element][3]
+                <[string8u][Language][es]>
+                <[string8][Text][El Gee Bee Model R Super Sportster era un avión de carreras para fines especiales fabricado por Granville Brothers Aircraft de Springfield, Massachusetts. Gee Bee son las siglas de Granville Brothers. Convertido desde X-Plane por Krzysztof Kaniewski. Modelo 3D original creado por Active.]>
+			>
+            <[localized_text][element][4]
+                <[string8u][Language][it]>
+                <[string8][Text][Il Gee Bee Model R Super Sportster era un aereo da competizione speciale costruito dalla Granville Brothers Aircraft di Springfield, Massachusetts. Gee Bee sta per Granville Brothers. Convertito da X-Plane da Krzysztof Kaniewski. Modello 3D originale realizzato da Active.]>
+			>
+            <[localized_text][element][5]
                 <[string8u][Language][pl]>
                 <[string8][Text][Gee Bee Model R Super Sportster był specjalnym samolotem wyścigowym wyprodukowanym przez Granville Brothers Aircraft ze Springfield w stanie Massachusetts. Gee Bee to skrót od Granville Brothers. Przerobiony z X-Plane przez Krzysztofa Kaniewskiego. Oryginalny model 3D wykonany przez Active.]>
 			>
@@ -36,6 +48,7 @@
         <[uint32] [UnitsBuilt]        [2]>
         <[uint32] [EngineCount]       [1]>
         <[uint32] [Year]              [1932]>
+        <[vector2_float64][FlapAirspeedRange]   [  0.0  0.0 ]>
         <[vector2_float64][NormalAirspeedRange] [ 39.0 85.0 ]>
         <[vector2_float64][CautionAirspeedRange][ 85  127.9 ]>
         <[string8][Tags][ airplane  historical piston gear tailgear ]>
