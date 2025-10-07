@@ -5,7 +5,7 @@
         <[float64][WingSpan][7.62]>
         <[float64][WingArea][6.97]>
         <[float64][HeightOffset][-1.19]>
-        <[float64][ApproachSpeed][46.3]>
+        <[float64][ApproachSpeed][43.3]>
         <[float64][PatternSpeed][61.7]>
         <[float64][InitialClimbSpeed][51.4]>
         <[int][EngineCount][1]>
@@ -15,16 +15,16 @@
         <[bool][FlyByWire][true]>
         <[bool][TailDragger][true]>
         <[float64][ThrottleTrimFactor][0.5]>
-        <[float64][ElevatorGain][0.4]>
-        <[float64][AileronGain][0.4]>
+        <[float64][ElevatorGain][2.4]>
+        <[float64][AileronGain][2.4]>
         <[float64][NormalBank][0.523598771542]>
         <[float64][MaximumBank][0.872664619237]>
         <[float64][MaximumRollRate][0.5]>
         <[bool][RudderTrimRequired][true]>
-        <[float64][RudderSteeringGain][0.5]>
+        <[float64][RudderSteeringGain][3.0]>
         <[float64][RudderCrossWind][1.5]>
-        <[float64][YawTrimFactor][0.1]>
-        <[float64][FlareHeightScaling][0.5]>
-        <[float64][FlareExpectedNoseDrop][0.1]>
+        <[float64][YawTrimFactor][0.2]>
+        <[float64][FlareHeightScaling][0.6]>
+        <[float64][FlareExpectedNoseDrop][0.4]>
     >
 >

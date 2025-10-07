@@ -6,7 +6,7 @@
     // Original 3D model made by Active (X-plane)
 	// Copyright Active May 2012
 	// Use of any part of this project in a commercial context is strictly forbidden!
-    // Date: Dec 2022; Sep 2024
+    // Date: Dec 2022; Sep 2024; Oct 2025
     //-------------------------------------
 
     <[modelmanager][][]
@@ -204,12 +204,12 @@
                 <[string8][Body][LeftGear]>
                 <[tmvector3d][R0][1.253 0.9716 -1.19]>
                 <[string8][InputBrake][LeftBrakeInput.Output]>
-                <[float64][BrakeStrength][0.2]>
+                <[float64][BrakeStrength][0.15]>
             >
-            <[output][GroundRollSpeedLeftWheelHull][]
+            <[output][GroundRollSpeedLeft][]
                 <[string8][Input][LeftWheelHull.Speed]>
             >
-            <[output][GroundRollLoadLeftWheelHull][]
+            <[output][GroundRollLoadLeft][]
                 <[string8][Input][LeftWheelHull.Load]>
             >
             <[output][LeftWheelHullSkid][]
@@ -250,12 +250,12 @@
                 <[string8][Body][RightGear]>
                 <[tmvector3d][R0][1.253 -0.9716 -1.19]>
                 <[string8][InputBrake][RightBrakeInput.Output]>
-                <[float64][BrakeStrength][0.2]>
+                <[float64][BrakeStrength][0.15]>
             >
-            <[output][GroundRollSpeedRightWheelHull][]
+            <[output][GroundRollSpeedRight][]
                 <[string8][Input][RightWheelHull.Speed]>
             >
-            <[output][GroundRollLoadRightWheelHull][]
+            <[output][GroundRollLoadRight][]
                 <[string8][Input][RightWheelHull.Load]>
             >
             <[output][RightWheelHullSkid][]
@@ -288,10 +288,10 @@
                 <[string8][Body][TailGear]>
                 <[tmvector3d][R0][-2.43 0 -0.4008]>
             >
-            <[output][GroundRollSpeedTailWheelHull][]
+            <[output][GroundRollSpeedTail][]
                 <[string8][Input][TailWheelHull.Speed]>
             >
-            <[output][GroundRollLoadTailWheelHull][]
+            <[output][GroundRollLoadTail][]
                 <[string8][Input][TailWheelHull.Load]>
             >
             <[output][TailWheelHullSkid][]
@@ -826,6 +826,9 @@
                 <[tmvector2d][Range][ -1.0 1.0 ]>
                 <[float64][Speed][0.1]>
             >
+            <[output_free][PitchTrimOutput][]
+                <[string8][Input][PitchTrim.Output]>
+            >
             <[sender][SenderTrim][]
                 <[string8][Input][PitchTrim.Output]>
                 <[string8][Message][Aircraft.Trim]>
@@ -932,18 +935,27 @@
             <[output_free][ServoFlapPositionOutput][]
                 <[string8][Input][ServoFlapPosition.Output]>
             >
+            // flaps end
+
+            <[input_switch][DoorInput][]
+                <[string8][Message][Controls.Door]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output_free][DoorInputOutput][]
+                <[string8][Input][DoorInput.Output]>
+            >
             <[servolinear][ServoDoor][]
-                <[string8][Input][AirspeedIndicator.IndicatedAirspeed]>
+                <[string8][Input][DoorInput.Output]>
                 <[float64][Position][0.0]>
                 <[float64][OutputSpeed][0.8]>
-                <[float64array][InputPosition][ 0 2 3]>
-                <[float64array][OutputPosition][ 1 1 0 ]>
+                <[float64array][InputPosition][ 0 1]>
+                <[float64array][OutputPosition][ 0 1 ]>
             >
             <[output_free][ServoDoorOutput][]
                 <[string8][Input][ServoDoor.Output]>
             >
-            // flaps end
-
 
             // gear start
 
@@ -1287,28 +1299,27 @@
                 <[tmvector3d][Pivot][1.253039 -0.985857 -1.190395]>
             >
 
-            <[graphics_input][DoorInput][]
-                <[uint32][InputID][ServoDoor.Output]>
-            >
-            <[graphics_linear_interpolation][DoorMapping][]
-                <[string8][Input][DoorInput.Output]>
-                <[tmvector2d][Map][(0.0 0.000000) (1.0 1.308997)]>
-            >
             <[hingedbodygraphics][Door][]
                 <[string8][GeometryList][ Door ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][Input][DoorMapping.Output]>
+                <[uint32][InputID][ServoDoor.Output]>
                 <[tmvector3d][Axis][0.0 0.192857 0.981227]>
                 <[tmvector3d][Pivot][-0.720988 -0.575004 0.318745]>
+                <[float64][Scaling][1.308997]>
             >
             <[hingedbodygraphics][DoorDecal][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
 				<[string8][GeometryList][ DoorDecalGbr1 ]>
-                <[uint32][Input][DoorMapping.Output]>
+                <[uint32][InputID][ServoDoor.Output]>
                 <[tmvector3d][Axis][0.0 0.192857 0.981227]>
                 <[tmvector3d][Pivot][-0.720988 -0.575004 0.318745]>
+                <[float64][Scaling][1.308997]>
+            >
+
+            <[graphics_input][DoorInput][]
+                <[uint32][InputID][ServoDoor.Output]>
             >
             <[graphics_linear_interpolation][DoorSupport1Mapping][]
                 <[string8][Input][DoorInput.Output]>
@@ -1355,19 +1366,15 @@
                 <[float64][Offset][-0.349066]>
             >
 			// prop rotation speed lever (on left)
-            <[graphics_linear_interpolation][GeeBeeR2_cockpitMapping_87][]
-                <[string8][Input][Static_rotation_Input.Output]> //prop_rotation_speed_rad_sec_all
-                <[tmvector2d][Map][(0.0 0.000873) (1.0 -0.001745)]> // x100
-            >
             <[hingedbodygraphics][PropSpeedLever][]
                 <[string8][GeometryList][ Lever2 Lever2Handle ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][InputID][ServoPropSpeed.Output]> //prop_rotation_speed_rad_sec_all
-                <[tmvector3d][Axis][0.0 -1.0 0.0]>
+                <[string8][InputID][ServoPropellerSpeed.Output]>
+                <[tmvector3d][Axis][0.0 1.0 0.0]>
                 <[tmvector3d][Pivot][-0.733900 0.425161 0.584135]>
-                <[float64][Scaling][1]>
-                <[float64][Offset][0.000873]>
+                <[float64][Scaling][-0.7618]>
+                <[float64][Offset][0.5873]>
             >
 			// strobe switch (hidden inside)
             <[hingedbodygraphics][StrobeSwitchHidden][]
@@ -1397,10 +1404,9 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][InputID][ServoAileronPosition.Output]>
-                <[tmvector3d][Axis][-1.0 0.0 0.0]>
+                <[tmvector3d][Axis][1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][-0.934287 0.0 -0.112954]>
-                <[float64][Scaling][-0.069813]>
-                <[float64][Offset][0.0]>
+                <[float64][Scaling][0.069813]>
             >
             <[hingedbodygraphics][Stick][]
                 <[string8][GeometryList][ Stick ]>
@@ -1409,7 +1415,6 @@
                 <[tmvector3d][Pivot][-0.934860 0.030406 -0.116705]>
                 <[string8][Graphics][StickBase]>
                 <[float64][Scaling][-0.034907]>
-                <[float64][Offset][0.0]>
             >
 			// battery switch (on green)
             <[hingedbodygraphics][MasterBatterySwitch][]
@@ -1480,7 +1485,7 @@
                 <[string8][GeometryList][ Lever5 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][InputID][ServoThrottle.Output]>  //sim/flightmodel/engine/ENGN_heat[0]
+                <[string8][InputID][EngineHeatLever.Output]>
                 <[tmvector3d][Axis][1.0 0.0 0.0]>
                 <[float64][Scaling][-0.026861]>
             >
@@ -1509,7 +1514,7 @@
             <[rigidbodygraphics][Instruments][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][GeometryList][ GaugesAlternate GaugesGlassAlternate Gauges GaugesBezels ]>
+                <[string8][GeometryList][ GaugesAlternate GaugesGlassAlternate Gauges GaugesBezels obj2 ]>
             > //GaugesGlass
             <[graphics_input][OilTempNeedleInput][]
                 <[uint32][InputID][ServoEngineWork.Output]> //engines/engine/oil-temperature-degf
@@ -3977,15 +3982,15 @@
             <[soundloop][GroundRollLeftLoop][]
                 <[string8][InputVolume][GroundRollVolumeLeft.Output]>
                 <[string8][InputPitch][GroundRollPitchLeft.Output]>
-                <[uint32][PositionID][Fuselage.R]>
-                <[uint32][VelocityID][Fuselage.V]>
+                <[uint32][PositionID][LeftGear.R]>
+                <[uint32][VelocityID][LeftGear.V]>
                 <[string8][SoundFile][rumble.wav]>
             >
             <[soundloop][GroundRollRightLoop][]
                 <[string8][InputVolume][GroundRollVolumeRight.Output]>
                 <[string8][InputPitch][GroundRollPitchRight.Output]>
-                <[uint32][PositionID][Fuselage.R]>
-                <[uint32][VelocityID][Fuselage.V]>
+                <[uint32][PositionID][RightGear.R]>
+                <[uint32][VelocityID][RightGear.V]>
                 <[string8][SoundFile][rumble.wav]>
             >
 
