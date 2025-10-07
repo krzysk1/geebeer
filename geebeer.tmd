@@ -1053,7 +1053,7 @@
 
             // altimeter
             <[input_default][PressureSetting][]
-                <[string8][Message][PressureSetting]>
+                <[string8][Message][Controls.PressureSetting0]>
                 <[uint][Positions][201]>
                 <[tmvector2d][Range][ 95000.0 105000.0 ]>
                 <[float64][Value][101325.0]>
@@ -1084,7 +1084,7 @@
 
             // attitude
             <[input_knob][AttitudeAdjustKnob][]
-               <[string8][Message][AttitudeAdjust]>
+                <[string8][Message][AttitudeAdjust]>
             >
             <[input_default][AttitudeAdjustInput][]
                 <[string8][Message][AttitudeAdjust]>
@@ -1092,7 +1092,7 @@
                 <[tmvector2d][Range][ -1.0 1.0]>
                 <[float64][Value][0.0]>
             >
-            <[output][AttitudeCorrection][]
+            <[output][AttitudeIndicatorAdjust][]
                 <[string8][Input][AttitudeAdjustInput.Output]>
             >
             <[attitude_indicator][AttitudeIndicator][]
@@ -1514,7 +1514,7 @@
             <[rigidbodygraphics][Instruments][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][GeometryList][ GaugesAlternate GaugesGlassAlternate Gauges GaugesBezels obj2 ]>
+                <[string8][GeometryList][ GaugesAlternate GaugesGlassAlternate Gauges GaugesBezels AttitudeBack AttitudeDial ]>
             > //GaugesGlass
             <[graphics_input][OilTempNeedleInput][]
                 <[uint32][InputID][ServoEngineWork.Output]> //engines/engine/oil-temperature-degf
@@ -1582,11 +1582,10 @@
             >
             <[graphics_input][TurnBallInput][]
                 <[uint32][InputID][SideslipAngle.Output]>
-                <[float64][Scaling][1.1]>
             >
             <[graphics_linear_interpolation][TurnBallMapping][]
                 <[string8][Input][TurnBallInput.Output]>
-                <[tmvector2d][Map][ (-1.1 -0.10821) (1.1 0.10821) ]>
+                <[tmvector2d][Map][ (-0.10821 -0.26) (0.10821 0.26) ]>
             >
             <[hingedbodygraphics][TurnBall][]
                 <[string8][GeometryList][ BallNeedle ]>
@@ -1594,7 +1593,7 @@
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][Input][TurnBallMapping.Output]>
                 <[tmvector3d][Axis][1.0 0.0 0.0]>
-                <[tmvector3d][Pivot][-0.7968 -0.005903 0.7757]>
+                <[tmvector3d][Pivot][-0.7968 -0.005903 0.8757]>
             >
             <[hingedbodygraphics][TurnNeedle][]
                 <[string8][GeometryList][ TurnNeedle ]>
@@ -1703,6 +1702,62 @@
                 <[uint32][Input][RpmNeedleMapping.Output]>
                 <[tmvector3d][Axis][1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][-0.7947 -0.2763 0.7031]>
+            >
+
+            <[graphics_input][BankAngle][]
+                <[uint32][InputID][BankAngle.Output]>
+            >
+            <[graphics_input][PitchAngle][]
+                <[uint32][InputID][PitchAngle.Output]>
+            >
+            <[graphics_rotation][AttitudeBankRotation][]
+                <[string8][Input][BankAngle.Output]>
+                <[tmvector3d][Axis][ -1.0 0.0 0.0 ]>
+                <[tmvector3d][Pivot][ -0.7949 -0.0036 0.6438 ]>
+            >
+            <[rigidbodygraphics][AttitudeBankIndicator][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][GeometryList][ AttitudeMarker ]>
+                <[string8][InputTransform][AttitudeBankRotation.Output]>
+            >
+            <[graphics_linear_interpolation][PitchAngleMapping][]
+                <[string8][Input][PitchAngle.Output]>
+                <[tmvector2d][Map][ (-0.61092 -0.01365) ( 0.0 0.00) (0.61092 0.01365) ]>
+            >
+            <[graphics_translation][AttitudePitchTransform][]
+                <[string8][Input][PitchAngleMapping.Output]>
+                <[tmvector3d][Axis][ 0.0 0.0 -1.0 ]>
+                <[string8][InputTransform][AttitudeBankRotation.Output]>
+            >
+            <[rigidbodygraphics][AttitudeIndicator][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][GeometryList][ AttitudeIndicator ]>
+                <[string8][InputTransform][AttitudePitchTransform.Output]>
+            >
+            <[graphics_input][AttitudeIndicatorAdjustInput][]
+                <[uint32][InputID][AttitudeIndicatorAdjust.Output]>
+                <[float64][Scaling][0.006]>
+            >
+            <[graphics_translation][AttitudeIndicatorAdjustTransform][]
+                <[string8][Input][AttitudeIndicatorAdjustInput.Output]>
+                <[tmvector3d][Axis][ 0.0 0.0 1.0 ]>
+            >
+            <[rigidbodygraphics][ArtificialHorizonPlane][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][GeometryList][ AttitudePlane ]>
+                <[string8][InputTransform][AttitudeIndicatorAdjustTransform.Output]>
+            >
+            <[hingedbodygraphics][ArtificialHorizonKnob][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][GeometryList][ AttitudeKnob ]>
+                <[string8][Input][AttitudeIndicatorAdjustInput.Output]>
+                <[tmvector3d][Axis][ -1.0 0.0 0.0 ]>
+                <[tmvector3d][Pivot][ -0.807 -0.0036 0.5943 ]>
+                <[float64][Scaling][1000.0]>
             >
 
             // human animation
