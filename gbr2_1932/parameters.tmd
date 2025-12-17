@@ -1,22 +1,22 @@
 <[file][][]
 
-	// Gee Bee R2 Super Sportster
-	// 1932 version NR2101 number 7
+    // Gee Bee R2 Super Sportster
+    // 1932 version NR2101 number 7
 
-	// INTRODUCTION
-	// The R2 is the sister ship of the R1. Except a few minor differences, they
-	// were identical. The R2 was intended to compete the Bendix Trophy, a cross
-	// country race from Los Angeles to Cleveland. Lee Gehlbach flew it and made
-	// fourth. Gehlbach also entered the Thompson Trophy and took the fifth place.
+    // INTRODUCTION
+    // The R2 is the sister ship of the R1. Except a few minor differences, they
+    // were identical. The R2 was intended to compete the Bendix Trophy, a cross
+    // country race from Los Angeles to Cleveland. Lee Gehlbach flew it and made
+    // fourth. Gehlbach also entered the Thompson Trophy and took the fifth place.
 
-	// CHARACTERISTICS
-	// Empty weight : 1796 lb
-	// Gross weight : 3883 lb with full tanks - 2371 lb with 50 gallons of fuel for closed course racing
-	// Powerplant : 550 horsepower Pratt & Whitney Wasp Jr. 985
-	// Maximum speed : 250 mph
-	// Tail wheel : fixed (can be unlatched for easier handling)
-	// Propeller : Smith controllable pitch
-	// Nav light : wing tip and tail fin
+    // CHARACTERISTICS
+    // Empty weight : 1796 lb
+    // Gross weight : 3883 lb with full tanks - 2371 lb with 50 gallons of fuel for closed course racing
+    // Powerplant : 550 horsepower Pratt & Whitney Wasp Jr. 985
+    // Maximum speed : 250 mph
+    // Tail wheel : fixed (can be unlatched for easier handling)
+    // Propeller : Smith controllable pitch
+    // Nav light : wing tip and tail fin
 
     <[modelmanager][][]
         <[pointer_list_tmgraphics][DynamicObjects][]
@@ -33,9 +33,9 @@
             >
 
             // 550 horsepower Pratt & Whitney Wasp Jr. 985
-			// 9-cylinder single row air cooled radial
-			// Bore x stroke: 5+3⁄16 in × 5+3⁄16 in (132 mm × 132 mm)
-			// Displacement: 985 cu in (16.14 L)
+            // 9-cylinder single row air cooled radial
+            // Bore x stroke: 5+3⁄16 in × 5+3⁄16 in (132 mm × 132 mm)
+            // Displacement: 985 cu in (16.14 L)
             <[engine][Engine][]
                 <[string8][ThrottleControl][ServoThrottle.Output]>
                 <[float64][RatedPower][410135]>
@@ -46,18 +46,18 @@
         <[pointer_list_tmgraphics][GraphicObjects][]
 
             <[rigidbodygraphics][Fuselage][]
-				<[string8][GeometryList][ Fuselage FuseDecalsGbr2 TailGear ]>
+                <[string8][GeometryList][ Fuselage FuseDecalsGbr2 TailGear ]>
             >
             <[rigidbodygraphics][Engine][]
-				<[string8][GeometryList][ Exchaust500 Engine500 Nacelle500 NacelleDecal500 ]>
-            >			
+                <[string8][GeometryList][ Exchaust500 Engine500 Nacelle500 NacelleDecal500 ]>
+            >
             <[hingedbodygraphics][DoorDecal][]
-				<[string8][GeometryList][ DoorDecalGbr2 ]>
+                <[string8][GeometryList][ DoorDecalGbr2 ]>
             >
             <[hingedbodygraphics][Rudder][]
                 <[string8][GeometryList][ Rudder RudderDecalGbr2 ]>
             >
-			// Tail wheel : fixed (can be unlatched for easier handling)
+            // Tail wheel : fixed (can be unlatched for easier handling)
             <[rotatingbodygraphics][TailWheel][]
                 <[string8][GeometryList][ TailWheel ]>
                 <[tmvector3d][Pivot][-2.095965 0.014752 -0.486745]>

@@ -1,9 +1,12 @@
 <[file][][]
     <[hints][][]
         // Gee-Bee R
-        <[float64][MaximumTakeOffMass][1394.8]>
+        <[float64][MaximumTakeoffMass][1394.8]>
+        <[float64][DefaultGrossMass][1066.8]>
         <[float64][WingSpan][7.62]>
         <[float64][WingArea][6.97]>
+        <[float64][LEMAC][1.28]>
+        <[float64][MAC][1.301]>
         <[float64][HeightOffset][-1.19]>
         <[float64][ApproachSpeed][43.3]>
         <[float64][PatternSpeed][61.7]>
@@ -17,9 +20,9 @@
         <[float64][ThrottleTrimFactor][0.5]>
         <[float64][ElevatorGain][2.4]>
         <[float64][AileronGain][2.4]>
-        <[float64][NormalBank][0.523598771542]>
-        <[float64][MaximumBank][0.872664619237]>
-        <[float64][MaximumRollRate][0.5]>
+        //<[float64][NormalBank][0.5235]>
+        //<[float64][MaximumBank][0.8726]>
+        <[float64][MaximumRollRate][1.5]>
         <[bool][RudderTrimRequired][true]>
         <[float64][RudderSteeringGain][3.0]>
         <[float64][RudderCrossWind][1.5]>

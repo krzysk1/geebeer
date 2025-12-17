@@ -1,18 +1,18 @@
 <[file][][]
 
-	// Gee Bee R2 Super Sportster            (NOT INCLUDED IN THIS PACKAGE)
-	// 1933 version NR2101 number 7
+    // Gee Bee R2 Super Sportster            (NOT INCLUDED IN THIS PACKAGE)
+    // 1933 version NR2101 number 7
 
-	// INTRODUCTION
-	// In 1933 the R2 is re-engined with the R1's previous engine. Rudder extension
-	// is added in the same way that for the R1. New wings are thicker and have an
-	// increased area. Flaps are added too, lowering the landing speed at 65 mph.
+    // INTRODUCTION
+    // In 1933 the R2 is re-engined with the R1's previous engine. Rudder extension
+    // is added in the same way that for the R1. New wings are thicker and have an
+    // increased area. Flaps are added too, lowering the landing speed at 65 mph.
 
-	// CHARACTERISTICS
-	// Powerplant : 550  or 800 horsepower Pratt & Whitney Wasp Sr. 1344
-	// Tail wheel : fixed
-	// Propeller : Smith controllable pitch
-	// Nav light : wing tip and tail fin
+    // CHARACTERISTICS
+    // Powerplant : 550  or 800 horsepower Pratt & Whitney Wasp Sr. 1344
+    // Tail wheel : fixed
+    // Propeller : Smith controllable pitch
+    // Nav light : wing tip and tail fin
 
     <[modelmanager][][]
         <[pointer_list_tmgraphics][DynamicObjects][]
@@ -20,7 +20,7 @@
             <[collisionhull][CollisionFuselage][]
                 <[string8][Geometry][Fuselage]>
             >
-			// Tail wheel : fixed
+            // Tail wheel : fixed
             <[wheel][TailWheelHull][]
                 <[float64][Radius][0.057]>
                 <[tmvector3d][R0][-2.264 0 -0.3258]>
@@ -29,15 +29,15 @@
         <[pointer_list_tmgraphics][GraphicObjects][]
 
             <[rigidbodygraphics][Fuselage][]
-				<[string8][GeometryList][ Fuselage FuseDecalsGbr2 ]>
+                <[string8][GeometryList][ Fuselage FuseDecalsGbr2 ]>
             >
             <[hingedbodygraphics][DoorDecal][]
-				<[string8][GeometryList][ DoorDecalGbr2 ]>
+                <[string8][GeometryList][ DoorDecalGbr2 ]>
             >
             <[hingedbodygraphics][Rudder][]
                 <[string8][GeometryList][ Rudder1933 RudderDecalGbr2 ]>
             >
-			// Tail wheel : fixed
+            // Tail wheel : fixed
             <[rotatingbodygraphics][TailWheel][]
                 <[string8][GeometryList][ TailWheel1933 ]>
                 <[tmvector3d][Pivot][-2.264349 0.014752 -0.325791]>
@@ -46,7 +46,7 @@
     >
 >
 
-			// Flaps are added too, lowering the landing speed at 65 mph.
+            // Flaps are added too, lowering the landing speed at 65 mph.
             <[hingedbodygraphics][RightFlap][]
                 <[string8][GeometryList][  ]>
                 <[uint32][PositionID][RightWing.R]>

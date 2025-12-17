@@ -1,19 +1,19 @@
 <[file][][]
 
-	// Gee Bee R1 Super Sportster
-	// 1933 version NR2100 number 11
+    // Gee Bee R1 Super Sportster
+    // 1933 version NR2100 number 11
 
-	// INTRODUCTION
-	// In 1933 the R1 is re-engined with a more powerful engine. To counteract
-	// the increased torque, a 10 inch rudder extension is added at the lower end.
-	// Participating to the Bendix Trophy this year, the plane crashed on take-off
-	// in Indianapolis. Pilot Russell Boardman died two days later.
+    // INTRODUCTION
+    // In 1933 the R1 is re-engined with a more powerful engine. To counteract
+    // the increased torque, a 10 inch rudder extension is added at the lower end.
+    // Participating to the Bendix Trophy this year, the plane crashed on take-off
+    // in Indianapolis. Pilot Russell Boardman died two days later.
 
-	// CHARACTERISTICS
-	// Powerplant : around 1000 horsepower Pratt & Whitney R-1860
-	// Tail wheel : fixed
-	// Propeller : Smith controllable pitch
-	// Nav light : null
+    // CHARACTERISTICS
+    // Powerplant : around 1000 horsepower Pratt & Whitney R-1860
+    // Tail wheel : fixed
+    // Propeller : Smith controllable pitch
+    // Nav light : null
 
     <[modelmanager][][]
         <[pointer_list_tmgraphics][DynamicObjects][]
@@ -21,21 +21,21 @@
             <[collisionhull][CollisionFuselage][]
                 <[string8][Geometry][Fuselage1933]>
             >
-			// Tail wheel : fixed
+            // Tail wheel : fixed
             <[wheel][TailWheelHull][]
                 <[float64][Radius][0.057]>
                 <[tmvector3d][R0][-2.264 0 -0.3258]>
             >
 
             // around 1000 horsepower Pratt & Whitney R-1860 -> R-1690
-			// Type: Nine-cylinder single-row supercharged air-cooled radial engine
-			// Bore: 6+1⁄8 in (155.6 mm)
-			// Stroke: 6+3⁄8 in (161.9 mm)
-			// Displacement: 1,690.5 cu in (27.7 L)
-			// Length: 50.98 in (1,295 mm)
-			// Diameter: 54.41 in (1,382 mm)
-			// Dry weight: 1,014 lb (460 kg)
-			// R-1690-S1C3G 1,050 hp (780 kW)
+            // Type: Nine-cylinder single-row supercharged air-cooled radial engine
+            // Bore: 6+1⁄8 in (155.6 mm)
+            // Stroke: 6+3⁄8 in (161.9 mm)
+            // Displacement: 1,690.5 cu in (27.7 L)
+            // Length: 50.98 in (1,295 mm)
+            // Diameter: 54.41 in (1,382 mm)
+            // Dry weight: 1,014 lb (460 kg)
+            // R-1690-S1C3G 1,050 hp (780 kW)
 
             <[engine][Engine][]
                 <[string8][ThrottleControl][ServoThrottle.Output]>
@@ -47,12 +47,12 @@
         <[pointer_list_tmgraphics][GraphicObjects][]
 
             <[rigidbodygraphics][Fuselage][]
-				<[string8][GeometryList][ Fuselage1933 FuseDecalsGbr1 FinDecalsGbr1 ]>
+                <[string8][GeometryList][ Fuselage1933 FuseDecalsGbr1 FinDecalsGbr1 ]>
             >
             <[hingedbodygraphics][Rudder][]
                 <[string8][GeometryList][ Rudder1933 RudderDecalGbr1 ]>
             >
-			// Tail wheel : fixed
+            // Tail wheel : fixed
             <[rotatingbodygraphics][TailWheel][]
                 <[string8][GeometryList][ TailWheel1933 ]>
                 <[tmvector3d][Pivot][-2.264349 0.014752 -0.325791]>
